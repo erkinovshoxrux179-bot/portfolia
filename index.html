@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erkinov Shoxruxjon | UI/UX Designer & Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+
+</head>
+<body>
+
+    <!-- Floating Navigation Sidebar -->
+    <nav class="floating-nav">
+        <ul>
+            <li><a href="#home" class="active" title="Home"><i class='bx bx-home-alt'></i></a></li>
+            <li><a href="#skills" title="Skills"><i class='bx bx-brain'></i></a></li>
+            <li><a href="#portfolio" title="Portfolio"><i class='bx bx-briefcase'></i></a></li>
+            <li><a href="#education" title="Education"><i class='bx bxs-graduation'></i></a></li>
+            <li><a href="#languages" title="Languages"><i class='bx bx-globe'></i></a></li>
+        </ul>
+    </nav>
+
+    <div class="main-wrapper">
+        
+        <!-- Hero Section -->
+        <section id="home" class="hero-section glass-panel">
+            <div class="hero-content">
+                <div class="avatar-glow">
+                    <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Avatar">
+                </div>
+                <h1 class="hero-title">Hi, I'm <span>Erkinov Shoxrux</span></h1>
+                <h2 class="hero-subtitle">I'm a <span class="typing-text">UI/UX Designer</span><span class="cursor">|</span></h2>
+                <p class="hero-desc">
+                    I create beautiful, responsive web experiences using modern technologies.<br>
+                    Passionate about clean code and user-centered design.
+                </p>
+                <div class="hero-actions">
+                    <a href="#portfolio" class="btn btn-primary">View My Work</a>
+                    <a href="cv.png" download class="btn btn-secondary">Download CV</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Two Column Layout for Desktop -->
+        <div class="two-column">
+            
+            <!-- Skills Section -->
+            <section id="skills" class="skills-section glass-panel">
+                <div class="section-header">
+                    <h2>My Skills</h2>
+                    <p>I'm a passionate Graphic & UI/UX Designer with extensive experience creating modern, visually stunning digital experiences. I specialize in interface design and multimedia content creation to deliver exceptional user-centered products.</p>
+                </div>
+                
+                <div class="skills-grid">
+                    <!-- Tech Icon Area -->
+                    <div class="tech-graphic">
+                        <div class="floating-icons">
+                            <span class="iconify" data-icon="simple-icons:adobephotoshop"></span>
+                            <span class="iconify" data-icon="simple-icons:adobeillustrator"></span>
+                            <span class="iconify" data-icon="simple-icons:adobeaftereffects"></span>
+                            <span class="iconify" data-icon="simple-icons:adobeindesign"></span>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Tech Hands" class="tech-img">
+                    </div>
+                    
+                    <!-- Progress Bars -->
+                    <div class="skills-bars">
+                        <div class="skill">
+                            <div class="skill-info">
+                                <span><span class="iconify" data-icon="simple-icons:adobephotoshop"></span> Photoshop</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-info">
+                                <span><span class="iconify" data-icon="simple-icons:adobeillustrator"></span> Illustrator</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-info">
+                                <span><span class="iconify" data-icon="simple-icons:adobeaftereffects"></span> After effects</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
+                        </div>
+                        <div class="skill">
+                            <div class="skill-info">
+                                <span><span class="iconify" data-icon="simple-icons:adobeindesign"></span> InDesign</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Portfolio Section -->
+            <section id="portfolio" class="portfolio-section glass-panel">
+                <div class="section-header text-center">
+                    <h2>My Portfolio</h2>
+                    <p>A collection of my recent projects</p>
+                </div>
+                
+                <div id="projects-grid" class="projects-grid">
+                    <div class="loader">Loading projects from API...</div>
+                    <!-- Projects injected via JS -->
+                </div>
+            </section>
+
+        </div> <!-- End Two Column -->
+
+        <!-- Bottom Two Column Layout -->
+        <div class="two-column bottom-row">
+            
+            <!-- Education Section -->
+            <section id="education" class="education-section glass-panel">
+                <div class="section-header text-center">
+                    <h2>Education <i class='bx bxs-graduation'></i></h2>
+                    <p>My learning journey and certifications</p>
+                </div>
+                
+                <div class="edu-grid">
+                    <div class="edu-column">
+                        <h3 class="col-title"><i class='bx bx-book-open' ></i> Education</h3>
+                        <div class="timeline-item">
+                            <div class="icon"><i class='bx bxs-institution'></i></div>
+                            <div class="content">
+                                <h4>Bachelor of Computer Science</h4>
+                                <p>Japan Digital University</p>
+                                <span class="date">2022 - 2026</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="icon"><i class='bx bx-code-alt'></i></div>
+                            <div class="content">
+                                <h4>Full Stack Web Development</h4>
+                                <p>It park</p>
+                                <span class="date">2021</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="edu-column">
+                        <h3 class="col-title"><i class='bx bx-certification'></i> Certifications</h3>
+                        <div class="timeline-item">
+                            <div class="icon"><i class='bx bxs-trophy'></i></div>
+                            <div class="content">
+                                <h4>Awarded 3rd place in the Turic Skills competition</h4>
+                                <p>World Skills</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="icon"><i class='bx bxl-adobe'></i></div>
+                            <div class="content">
+                                <h4>Adobe Generative AI Content Creation</h4>
+                                <p>Adobe</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-center mt-4"><small><i class='bx bx-up-arrow-alt'></i> Always learning and growing</small></p>
+            </section>
+
+            <!-- Languages Section -->
+            <section id="languages" class="languages-section glass-panel">
+                <div class="section-header text-center">
+                    <h2>Languages</h2>
+                    <p>The languages I speak and my proficiency level in each</p>
+                </div>
+                
+                <div class="language-bars">
+                    <div class="skill">
+                        <div class="skill-info">
+                            <span><strong>US</strong> English <small>(Fluent)</small></span>
+                            <span>75%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress" style="width: 98%;"></div></div>
+                    </div>
+                    
+                    <div class="skill">
+                        <div class="skill-info">
+                            <span><strong>UZ</strong> O'zbekcha <small>(Native)</small></span>
+                            <span>100%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress" style="width: 100%;"></div></div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-info">
+                            <span><strong>RU</strong> Russian <small>(Conversational)</small></span>
+                            <span>65%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress" style="width: 65%;"></div></div>
+                    </div>
+                </div>
+                <p class="text-center mt-4"><small><i class='bx bx-up-arrow-alt'></i> Always learning and improving my language skills</small></p>
+            </section>
+
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Erkinov Shoxruxjon</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
