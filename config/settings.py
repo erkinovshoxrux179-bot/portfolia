@@ -10,8 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
-from pathlib import Path
 import os
+import dj_database_url
+from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,12 +22,24 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-h3n3d61%2%2%ho5ka=b&edpt^0_^0%#+e7nwgvfz9oy)kqwbaa'
+# In production (e.g. on Render), set DJANGO_SECRET_KEY in the environment.
+SECRET_KEY = os.environ.get(
+    "DJANGO_SECRET_KEY",
+    "django-insecure-h3n3d61%2%2%ho5ka=b&edpt^0_^0%#+e7nwgvfz9oy)kqwbaa",
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# On Render, set DEBUG to "False" in environment variables.
+DEBUG = os.environ.get("DEBUG", "True") == "True"
 
-ALLOWED_HOSTS = []
+# Comma-separated list of hosts, e.g. "localhost,127.0.0.1,my-app.onrender.com"
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "*").split(",")
+
+# Railway CSRF domains
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.up.railway.app',
+    'https://*.railway.app',
+]
 
 
 # Application definition
@@ -45,6 +58,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -84,6 +98,10 @@ DATABASES = {
     }
 }
 
+# Update database configuration from $DATABASE_URL environment variable (if defined)
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
@@ -121,9 +139,21 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# Location where `collectstatic` will put static files (used by Render)
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 STATICFILES_DIRS = [
     BASE_DIR,  # Serve style.css and script.js from the project root
 ]
+
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

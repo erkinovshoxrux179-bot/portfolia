@@ -1,0 +1,35 @@
+Render Django portfolio – Environment variables
+==============================================
+
+Quyidagi environment o‘zgaruvchilarni Render’dagi “Environment Variables” bo‘limida kiriting.
+
+1) DJANGO_SECRET_KEY
+--------------------
+Name: DJANGO_SECRET_KEY
+Value: juda uzun, tasodifiy maxfiy kalit.
+   Masalan: onlayn generator bilan olingan 50+ belgili satr.
+   Eslatma: buni hech kimga bermang, faqat serverda saqlang.
+
+2) DEBUG
+--------
+Name: DEBUG
+Value: False
+Izoh: Production (Render) uchun har doim False qiling.
+
+3) ALLOWED_HOSTS
+----------------
+Name: ALLOWED_HOSTS
+Value: Render servisingiz domeni.
+   Misol: your-service-name.onrender.com
+   Bir nechta bo‘lsa: localhost,127.0.0.1,your-service-name.onrender.com
+
+4) (Ixtiyoriy) DATABASE_URL
+---------------------------
+Name: DATABASE_URL
+Value: Agar Render Postgres ishlatsangiz, u yerda berilgan connection URL
+   Misol: postgres://USER:PASSWORD@HOST:PORT/DBNAME
+
+Izoh:
+- Bu fayl faqat ma’lumot uchun, uni git’da qoldirish mumkin.
+- Haqiqiy maxfiy qiymatlarni `.env` yoki Render paneliga qo‘ying, bu faylga yozmang.
+

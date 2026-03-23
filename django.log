@@ -1,4 +1,4 @@
-nohup: ignoring input
+Enohup: ignoring input
 Watching for file changes with StatReloader
 [14/Mar/2026 17:20:18] "POST /api/auth/login/ HTTP/1.1" 200 55
 [14/Mar/2026 17:20:18] "GET /api/projects/ HTTP/1.1" 200 576
