@@ -11,4 +11,6 @@ pillow==12.1.1
 requests==2.32.5
 sqlparse==0.5.5
 urllib3==2.6.3
->>>>>>> a4f87849983ea1e18f2d96431b11a5ac0a5a7868
+dj-database-url
+psycopg2-binary
+whitenoise
