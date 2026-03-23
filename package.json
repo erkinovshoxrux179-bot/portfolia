@@ -1,0 +1,10 @@
+{
+  "name": "portfolia",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Portfolio project",
+  "scripts": {
+    "start": "python manage.py runserver 0.0.0.0:10000"
+  },
+  "dependencies": {}
+}
